@@ -1,0 +1,251 @@
+<!-- <div>
+
+            <label for="eventType">Select Event Type:</label>
+            <select id="eventType" [(ngModel)]="selectedEventType">
+              <option *ngFor="let title of eventTitles" [value]="title">{{ title }}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="worksitetype">Select worksitetype :</label>
+            <select id="worksitetype" [(ngModel)]="selectedworksitetype">
+              <option *ngFor="let Name of eventNames" [value]="Name">{{ Name }}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="worksitetype">Select organization :</label>
+            <select id="worksitetype" [(ngModel)]="selectedorganization">
+              <option *ngFor="let Name of eventNamess" [value]="Name">{{ Name }}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="worksitetype">Select region :</label>
+            <select id="worksitetype" [(ngModel)]="selectedregion">
+              <option *ngFor="let Name of eventNamesssss" [value]="Name">{{ Name }}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="worksitetype">Select timezone :</label>
+            <select id="worksitetype" [(ngModel)]="selectedtimezone">
+              <option *ngFor="let Name of eventNamesss" [value]="Name">{{ Name }}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="worksitetype">Select reportinggroup :</label>
+            <select id="worksitetype" [(ngModel)]="selectedreportinggroup">
+              <option *ngFor="let Name of eventNamessss" [value]="Name">{{ Name }}</option>
+            </select>
+          </div>
+  
+    <form class="abc">
+        <button (click)="getEvent()" class="btn btn-primary">getEvent</button>
+        </form>
+        <button (click)="saveEvent()" class="btn btn-info">Submit</button>
+ 
+  
+      <div *ngIf="submitted">
+        <h4>Event was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newEvent()">Add</button>
+      </div>
+ 
+  
+  
+  <div *ngIf="eventsList.length > 0">
+    <h2>Event List:</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Basversion</th>
+          <th>Event No</th>
+         <th>eMinute</th>
+        <th>clientName</th>
+        <th>ampm</th>
+         <th>bastimestamp</th>
+        <th>time</th>
+        <th>occurrenceDate</th>
+        <th>eventType</th>
+        <th>hangName</th>
+        <th>jobLocationType</th>
+        <th>EventTypeText</th>
+        <th>EventDescription</th>
+         </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of eventsList">
+          <td>{{ event.id }}</td>
+          <td>{{ event.basversion }}</td>
+          <td>{{ event.eventNo }}</td>
+          <td>{{ event.eMinute }}</td>
+          <td>{{ event.clientName }}</td>
+          <td>{{ event.ampm }}</td>
+          <td>{{ event.bastimestamp }}</td>
+          <td>{{ event.time }}</td>
+          <td>{{ event.occurrenceDate }}</td>
+          <td>{{ event.eventType }}</td>
+          <td>{{ event.hangName }}</td>
+          <td>{{ event.jobLocationType }}</td>    
+          <td>{{event.EventTypeText}}</td>    
+          <td>{{event.EventDescription}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <label for="eventType">Select Event Type:</label>
+  <select id="eventType" [(ngModel)]="selectedEventType">
+    <option *ngFor="let eventType of eventTypes" [value]="eventType">{{ eventType }}</option>
+  </select>
+</div>
+
+<div>
+  <label for="worksitetype">Select Worksite Type:</label>
+  <select id="worksitetype" [(ngModel)]="selectedWorksiteType">
+    <option *ngFor="let worksiteType of worksiteTypes" [value]="worksiteType">{{ worksiteType }}</option>
+  </select>
+</div>
+
+<!-- 
+  <div class="form-group">
+            <label for="basversion">basversion</label>
+            <input
+              type="text"
+              class="form-control"
+              id="basversion"
+              required
+              [(ngModel)]="eventData.basversion"
+              name="basversion"
+            />
+          </div> 
+
+
+
+
+
+          
+          <!-- <div class="form-group">
+            <label for="bastimestamp">bastimestamp.:</label>
+            <input
+              type="datetime"
+              class="form-control"
+              id="bastimestamp"
+              required
+              [(ngModel)]="eventData.bastimestamp"
+              name="bastimestamp"
+            />
+          </div>   -->
+
+          <div class="form-group">
+            <label for="bastimestamp">jobLocationType</label>
+            <input
+              type="text"
+              class="form-control"
+              id="jobLocationType"
+              required
+              [(ngModel)]="eventData.jobLocationType"
+              name="jobLocationType"
+            />
+          </div>-->
+          <div class="form-group">
+            <label for="clientName">clientName</label>
+            <input
+              type="text"
+              class="form-control"
+              id="clientName"
+              required
+              [(ngModel)]="eventData.clientName"
+              name="clientName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="hangName">hangName</label>
+            <input
+              type="text"
+              class="form-control"
+              id="hangName"
+              required
+              [(ngModel)]="eventData.hangName"
+              name="hangName"
+            />
+          </div>   
+        <div class="form-group">
+          <label for="EventDescription">EventDescription:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="EventDescription"
+            required
+            [(ngModel)]="eventData.EventDescription"
+            name="EventDescription"
+          />
+        </div> -->
+     
+<!-- <form class="abc">
+  <button (click)="getEvent()" class="btn btn-primary">Fetch Events</button>
+</form> -->
+<button (click)="saveEvent()" class="btn btn-info">Submit Event</button>
+
+<div *ngIf="submitted">
+  <h4>Event submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newEvent()">Add Another Event</button>
+</div>
+
+<div *ngIf="eventsList.length > 0">
+  <h2>Event List:</h2>
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Basversion</th>
+      
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let event of eventsList">
+        <td>{{ event.id }}</td>
+        <td>{{ event.basversion }}</td>
+      
+      </tr>
+    </tbody>
+  </table>
+</div>
+
