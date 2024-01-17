@@ -440,6 +440,175 @@ namespace INTRAC.Api.Controllers
 
 
 
+
+
+
+
+
+//        USE[INTRAC88]
+//GO
+///****** Object:  StoredProcedure [dbo].[InsertEventData]    Script Date: 1/17/2024 8:36:15 AM ******/
+//SET ANSI_NULLS ON
+//GO
+//SET QUOTED_IDENTIFIER ON
+//GO
+//ALTER PROCEDURE[dbo].[InsertEventData]
+//        AS
+//BEGIN
+//    BEGIN TRANSACTION;
+
+//        DECLARE @Company_RID INT;
+//    SET @Company_RID = 128075;
+
+//        DECLARE @BASVERSION INT; 
+//    SET @BASVERSION = 0;
+
+//        DECLARE @ScoreCard NVARCHAR(255);
+//        SET @ScoreCard = '';
+
+//        DECLARE @BASTIMESTAMP DATETIME; 
+//    SET @BASTIMESTAMP = ''; -- Assuming this is the correct format, adjust if needed
+
+//    DECLARE @Description NVARCHAR(255);
+//        SET @Description = '';
+
+//        DECLARE @Name NVARCHAR(255); 
+//    SET @Name = '';
+
+//        DECLARE @Company_REN INT;
+//    SET @Company_REN = 0;
+
+//        DECLARE @Company_RMA NVARCHAR(255);
+//        SET @Company_RMA = '';
+
+//        DECLARE @Status NVARCHAR(255);
+//        SET @Status = '';
+
+//        DECLARE @Goals NVARCHAR(255);
+//        SET @Goals = '';
+
+//        DECLARE @WTID INT; 
+//    SET @WTID = 0;
+
+//        DECLARE @OrgID INT; 
+//    SET @OrgID = 0;
+
+
+
+//        DECLARE @RepGrpID INT; 
+//    SET @RepGrpID = 0;
+
+//        DECLARE @TZID INT;
+//    SET @TZID = 0;
+
+//        DECLARE @Organization_REN INT; 
+//    SET @Organization_REN = 0;
+
+//        DECLARE @Organization_RID INT;
+//    SET @Organization_RID = 0;
+
+//        DECLARE @Organization_RMA INT;
+//    SET @Organization_RMA = 0;
+
+//        DECLARE @Title NVARCHAR(255);
+//        SET @Title = '';
+
+//        DECLARE @LeadingOrLagging NVARCHAR(255);
+//        SET @LeadingOrLagging = '';
+
+//        DECLARE @EventTypeClass_REN NVARCHAR(255);
+//        SET @EventTypeClass_REN = '';
+
+//        DECLARE @EventTypeClass_RID INT;
+//    SET @EventTypeClass_RID = 0;
+
+//        DECLARE @EventTypeClass_RMA INT;
+//    SET @EventTypeClass_RMA = 0;
+
+//        DECLARE @RestrictEventAccess NVARCHAR(255);
+//        SET @RestrictEventAccess = '';
+
+//        DECLARE @InjuryRestricted NVARCHAR(255);
+//        SET @InjuryRestricted = '';
+
+//        DECLARE @HRRestricted NVARCHAR(255);
+//        SET @HRRestricted = '';
+
+//        DECLARE @SecurityRestricted NVARCHAR(255);
+//        SET @SecurityRestricted = '';
+
+//        DECLARE @OrderNumber INT;
+//    SET @OrderNumber = 0;
+
+//        DECLARE @HRHealthRestricted NVARCHAR(255);
+//        SET @HRHealthRestricted = '';
+
+//        DECLARE @OperationsRestricted NVARCHAR(255);
+//        SET @OperationsRestricted = '';
+
+//        DECLARE @ETID INT;
+//    SET @ETID = 0;
+
+//        DECLARE @CreatedByAPI NVARCHAR(255);
+//        SET @CreatedByAPI = '';
+
+//    -- Use variables to store the result of NEXT VALUE FOR
+//   DECLARE @eventtypeID INT;
+//    SET @eventtypeID = NEXT VALUE FOR BAS_IDGEN_SEQ;
+
+//    DECLARE @WorksiteTypeID INT;
+//    SET @WorksiteTypeID = NEXT VALUE FOR BAS_IDGEN_SEQ;
+
+//    DECLARE @OrganizationID INT;
+//    SET @OrganizationID = NEXT VALUE FOR BAS_IDGEN_SEQ;
+
+//    DECLARE @ReportingGroupID INT;
+//    SET @ReportingGroupID = NEXT VALUE FOR BAS_IDGEN_SEQ;
+
+//    DECLARE @TimezoneID INT;
+//    SET @TimezoneID = NEXT VALUE FOR BAS_IDGEN_SEQ;
+
+//    DECLARE @RegionID INT;
+//    SET @RegionID = NEXT VALUE FOR BAS_IDGEN_SEQ; -- Ensure unique ID
+
+//    INSERT INTO[INTRAC88].[dbo].[eventtype]
+//        (ID, BASVERSION, BASTIMESTAMP, ScoreCard, Description, Company_REN, Company_RID, Company_RMA, Goals, Title, Status, LeadingOrLagging, EventTypeClass_REN, EventTypeClass_RID, EventTypeClass_RMA, RestrictEventAccess, InjuryRestricted, HRRestricted, SecurityRestricted, OrderNumber, HRHealthRestricted, OperationsRestricted, ETID, CreatedByAPI)
+//    VALUES(@eventtypeID, @BASVERSION, @BASTIMESTAMP, @ScoreCard, @Description, @Company_REN, @Company_RID, @Company_RMA, @Goals, @Title, @Status, @LeadingOrLagging, @EventTypeClass_REN, @EventTypeClass_RID, @EventTypeClass_RMA, @RestrictEventAccess, @InjuryRestricted, @HRRestricted, @SecurityRestricted, @OrderNumber, @HRHealthRestricted, @OperationsRestricted, @ETID, @CreatedByAPI);
+
+//        INSERT INTO[INTRAC88].[dbo].[worksitetype]
+//        (ID, BASVERSION, BASTIMESTAMP, Name, Status, Company_REN, Company_RID, Company_RMA, WTID)
+//        VALUES(@WorksiteTypeID, @BASVERSION, @BASTIMESTAMP, @Name, @Status, @Company_REN, @Company_RID, @Company_RMA, @WTID);
+
+//        INSERT INTO[INTRAC88].[dbo].[organization]
+//        (ID, BASVERSION, BASTIMESTAMP, Company_REN, Company_RID, Company_RMA, Name, Status, OrgID)
+//        VALUES(@OrganizationID, @BASVERSION, @BASTIMESTAMP, @Company_REN, @Company_RID, @Company_RMA, @Name, @Status, @OrgID);
+
+//        INSERT INTO[INTRAC88].[dbo].[region]
+//        (ID, BASVERSION, BASTIMESTAMP, Company_REN, Company_RID, Company_RMA, Name, Status, Organization_REN, Organization_RID, Organization_RMA, RegionID)
+//        VALUES(@RegionID, @BASVERSION, @BASTIMESTAMP, @Company_REN, @Company_RID, @Company_RMA, @Name, @Status, @Organization_REN, @Organization_RID, @Organization_RMA, @RegionID);
+
+//        INSERT INTO[INTRAC88].[dbo].[reportinggroup]
+//        (ID, BASVERSION, BASTIMESTAMP, Name, Status, Company_REN, Company_RID, Company_RMA, RepGrpID)
+//        VALUES(@ReportingGroupID, @BASVERSION, @BASTIMESTAMP, @Name, @Status, @Company_REN, @Company_RID, @Company_RMA, @RepGrpID);
+
+//        INSERT INTO[INTRAC88].[dbo].[timezone]
+//        (ID, BASVERSION, BASTIMESTAMP, Name, Status, Company_REN, Company_RID, Company_RMA, TZID)
+//        VALUES(@TimezoneID, @BASVERSION, @BASTIMESTAMP, @Name, @Status, @Company_REN, @Company_RID, @Company_RMA, @TZID);
+
+//        COMMIT;
+//END;
+
+
+
+
+
+
+
+
+
+
+
+
         [HttpPost(Name = "CreateEvent")]
         public ActionResult<Eventmodule> CreateEvent(Eventmodule eventItem)
         {
